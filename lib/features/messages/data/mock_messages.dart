@@ -1,0 +1,183 @@
+import '../models/message.dart';
+
+/// Helper to generate mock message dates relative to now.
+DateTime _timeMinus({int days = 0, int hours = 0, int minutes = 0}) {
+  return DateTime.now().subtract(
+    Duration(days: days, hours: hours, minutes: minutes),
+  );
+}
+
+/// Realistic mock messages spread over two chats with various statuses.
+final List<Message> mockMessages = [
+  // --- Chat 1: Conversation with Anvar Karimov (chat_1) ---
+  Message(
+    id: 'msg_101',
+    chatId: 'chat_1',
+    senderId: 'user_anvar',
+    text: 'Assalomu alaykum, yaxshimisiz?',
+    createdAt: _timeMinus(hours: 4, minutes: 30),
+    status: MessageStatus.read,
+  ),
+  Message(
+    id: 'msg_102',
+    chatId: 'chat_1',
+    senderId: 'user_me',
+    text: 'Vaalaykum assalom! Rahmat, o‘zingiz yaxshimi?',
+    createdAt: _timeMinus(hours: 4, minutes: 28),
+    status: MessageStatus.read,
+  ),
+  Message(
+    id: 'msg_103',
+    chatId: 'chat_1',
+    senderId: 'user_anvar',
+    text: 'Flutter bo‘yicha loyihani boshladingizmi?',
+    createdAt: _timeMinus(hours: 3, minutes: 10),
+    status: MessageStatus.read,
+  ),
+  Message(
+    id: 'msg_104',
+    chatId: 'chat_1',
+    senderId: 'user_me',
+    text: 'Ha, arxitekturasini feature-first usulida tayyorlayapman.',
+    createdAt: _timeMinus(hours: 3, minutes: 8),
+    status: MessageStatus.read,
+  ),
+  Message(
+    id: 'msg_105',
+    chatId: 'chat_1',
+    senderId: 'user_me',
+    text: 'Modellar, mock ma’lumotlar va temalarni sozlab chiqdim.',
+    createdAt: _timeMinus(hours: 3, minutes: 7),
+    status: MessageStatus.read,
+  ),
+  Message(
+    id: 'msg_106',
+    chatId: 'chat_1',
+    senderId: 'user_anvar',
+    text: 'Ajoyib! Qaysi state management’dan foydalanmoqchisiz?',
+    createdAt: _timeMinus(hours: 2, minutes: 45),
+    status: MessageStatus.read,
+  ),
+  Message(
+    id: 'msg_107',
+    chatId: 'chat_1',
+    senderId: 'user_me',
+    text: 'Hozircha faqat UI qilamiz, keyin bloc yoki riverpod tanlaymiz.',
+    createdAt: _timeMinus(hours: 2, minutes: 40),
+    status: MessageStatus.read,
+  ),
+  Message(
+    id: 'msg_108',
+    chatId: 'chat_1',
+    senderId: 'user_me',
+    text: 'Telegram UI maketlarini yig‘ishni reja qildim.',
+    createdAt: _timeMinus(hours: 1, minutes: 10),
+    status: MessageStatus.sent,
+  ),
+  Message(
+    id: 'msg_109',
+    chatId: 'chat_1',
+    senderId: 'user_anvar',
+    text: 'Salom! Bugun darsdan keyin uchrashamizmi?',
+    createdAt: _timeMinus(minutes: 15),
+    status: MessageStatus.sent,
+  ),
+  Message(
+    id: 'msg_110',
+    chatId: 'chat_1',
+    senderId: 'user_anvar',
+    text: 'Kutubxonada bo‘laman.',
+    createdAt: _timeMinus(minutes: 14),
+    status: MessageStatus.sent,
+  ),
+  Message(
+    id: 'msg_111',
+    chatId: 'chat_1',
+    senderId: 'user_me',
+    text: 'Mayli, soat 5 larda boraman.',
+    createdAt: _timeMinus(minutes: 1),
+    status: MessageStatus.sending,
+  ),
+
+  // --- Chat 3: Conversation with Sarah Jenkins (chat_3) ---
+  Message(
+    id: 'msg_301',
+    chatId: 'chat_3',
+    senderId: 'user_sarah',
+    text: 'Hi there! Did you get a chance to inspect the Figma design?',
+    createdAt: _timeMinus(days: 1, hours: 5),
+    status: MessageStatus.read,
+  ),
+  Message(
+    id: 'msg_302',
+    chatId: 'chat_3',
+    senderId: 'user_me',
+    text: 'Hey Sarah! Yes, I checked the color schemes and spacing.',
+    createdAt: _timeMinus(days: 1, hours: 4, minutes: 45),
+    status: MessageStatus.read,
+  ),
+  Message(
+    id: 'msg_303',
+    chatId: 'chat_3',
+    senderId: 'user_sarah',
+    text: 'Great. We are sticking with Material 3 dynamics.',
+    createdAt: _timeMinus(days: 1, hours: 3),
+    status: MessageStatus.read,
+  ),
+  Message(
+    id: 'msg_304',
+    chatId: 'chat_3',
+    senderId: 'user_me',
+    text: 'Sounds perfect, the Telegram blue seed color fits very nicely.',
+    createdAt: _timeMinus(days: 1, hours: 2, minutes: 50),
+    status: MessageStatus.read,
+  ),
+  Message(
+    id: 'msg_305',
+    chatId: 'chat_3',
+    senderId: 'user_sarah',
+    text: 'How is the chat bubble UI coming along?',
+    createdAt: _timeMinus(hours: 5),
+    status: MessageStatus.read,
+  ),
+  Message(
+    id: 'msg_306',
+    chatId: 'chat_3',
+    senderId: 'user_me',
+    text: 'I am preparing the foundational models first to keep the architecture clean.',
+    createdAt: _timeMinus(hours: 4),
+    status: MessageStatus.read,
+  ),
+  Message(
+    id: 'msg_307',
+    chatId: 'chat_3',
+    senderId: 'user_sarah',
+    text: 'Good practice! Separation of concerns is key.',
+    createdAt: _timeMinus(hours: 3, minutes: 30),
+    status: MessageStatus.read,
+  ),
+  Message(
+    id: 'msg_308',
+    chatId: 'chat_3',
+    senderId: 'user_sarah',
+    text: 'The new design assets have been updated in Figma.',
+    createdAt: _timeMinus(hours: 3),
+    status: MessageStatus.read,
+  ),
+  Message(
+    id: 'msg_309',
+    chatId: 'chat_3',
+    senderId: 'user_me',
+    text: 'Got it, pulling them in right now.',
+    createdAt: _timeMinus(hours: 2, minutes: 40),
+    status: MessageStatus.sent,
+  ),
+  Message(
+    id: 'msg_310',
+    chatId: 'chat_3',
+    senderId: 'user_me',
+    text: 'Will share a demo build soon!',
+    createdAt: _timeMinus(hours: 1),
+    status: MessageStatus.sent,
+  ),
+];
